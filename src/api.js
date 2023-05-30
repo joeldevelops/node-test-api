@@ -5,11 +5,16 @@ import * as service from './service.js';
 const app = express();
 const port = 3000;
 
-const urlBase = '/api/v2/maths';
-
 app.use(express.json());
 
-app.get('/api/v2/maths/addition', (req, res) => {
+app.get('/api/v2/maths/time', (req, res) => {
+    const result = service.time();
+    return res.json({
+        result
+    });
+});
+
+app.post('/api/v2/maths/addition', (req, res) => {
     const { body } = req;
     const result = service.addition(body.a, body.b);
     return res.json({
@@ -17,7 +22,7 @@ app.get('/api/v2/maths/addition', (req, res) => {
     });
 });
 
-app.get('/api/v2/maths/subtraction', (req, res) => {
+app.post('/api/v2/maths/subtraction', (req, res) => {
     const { body } = req;
     const result = service.subtraction(body.a, body.b);
     return res.json({
