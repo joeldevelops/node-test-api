@@ -8,5 +8,3 @@ jobs:
       # Request build and stream output
       - name: Build Serverless functions and deploy via Nano API
         uses: Nano-API/Deploy@v0
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
