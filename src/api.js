@@ -3,9 +3,13 @@ import * as express from 'express';
 import * as service from './service.js';
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(express.json());
+
+app.get('/', (req, res) => {
+    return res.send('You! Shall not! Pass!');
+});
 
 app.get('/api/v2/maths/time', (req, res) => {
     const result = service.time();
