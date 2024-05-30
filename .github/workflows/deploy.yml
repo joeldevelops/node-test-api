@@ -7,7 +7,7 @@ jobs:
     steps:
       # Request build and stream output
       - name: Build Serverless functions and deploy via Nano API
-        uses: Nano-API/Deploy@v0
+        uses: Nano-API/Deploy@version/0
         with:
           apiKey: ${{ secrets.NANO_API_KEY }}
           envName: 'test'
