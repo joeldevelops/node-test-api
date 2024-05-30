@@ -11,4 +11,4 @@ jobs:
         with:
           api_key: 'test_api_key'
           envName: 'test'
-          token: 'test_token'
+          token: ${{ secrets.GITHUB_TOKEN }}
