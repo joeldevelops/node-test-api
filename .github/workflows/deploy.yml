@@ -9,6 +9,7 @@ jobs:
       - name: Build Serverless functions and deploy via Nano API
         uses: Nano-API/Deploy@v0
         with:
-          api_key: 'test_api_key'
+          apiKey: ${{ secrets.NANO_API_KEY }}
           envName: 'test'
           token: ${{ secrets.GITHUB_TOKEN }}
+          planId: 2
